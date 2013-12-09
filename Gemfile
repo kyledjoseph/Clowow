@@ -45,4 +45,6 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_12factor'
+gem 'newrelic_rpm'
+
 ruby '2.0.0'

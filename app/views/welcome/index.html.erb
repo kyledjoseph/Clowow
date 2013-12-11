@@ -1,4 +1,17 @@
 <h2>Clowow</h2>
 <p>
-  The time is now: <%= Time.now %>
+	<a href="/users">Accounts</a>
+	<a href="/posts">Posts</a>
 </p>
+
+<table>
+	<tbody>
+		<% @posts.each do |post| %>
+		<tr>
+			<td>
+				<img src="<%= post.content %>">
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

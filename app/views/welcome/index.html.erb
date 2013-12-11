@@ -1,18 +1,17 @@
 
 <div class="container">
-	<div class="row">
-		<h1>Clowow</h1>
-		<p>
-			<button type="button" class="btn btn-primary btn-block">Upload</button>
-			<a href="/users">Accounts</a>
-			<a href="/posts">Posts</a>
-		</p>
-	</div>
-
-	<div class="row">
+	<h1>Clowow</h1>
+	<p>
+		<button type="button" class="btn btn-primary btn-block">Upload</button>
+		<a href="/users">Accounts</a>
+		<a href="/posts">Posts</a>
+	</p>
 	<% @posts.each do |post| %>
 	<div class="post">
 		<img src="<%= post.content %>">
+		<% @users.each do |user| %>
+			<a href="/users/<%= user[:id] %>"><%= user[:name] %></a>
+		<% end %>
 	</div>
 	<% end %>
 </div>

@@ -1,4 +1,8 @@
 Clowow::Application.routes.draw do
+  resources :likes
+
+  resources :comments
+
   resources :posts
 
   resources :users

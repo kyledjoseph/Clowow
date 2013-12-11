@@ -9,11 +9,6 @@
 	<% @posts.each do |post| %>
 	<div class="post">
 		<img src="<%= post.content %>">
-		<% @users.each do |user| %>
-			<% if user[:id] == post[:user_id] %>
-			<a href="/users/<%= user[:id] %>"><%= user[:name] %></a>
-			<% end %>
-		<% end %>
-	</div>
+		<p><%= @likes[post[:id]] %></p>
 	<% end %>
 </div>

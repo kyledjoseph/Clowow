@@ -1,14 +1,20 @@
 
 <div class="container">
-	<h1>Clowow</h1>
-	<p>
-		<button type="button" class="btn btn-primary btn-block">Upload</button>
-		<a href="/users">Accounts</a>
-		<a href="/posts">Posts</a>
-	</p>
-	<% @posts.each do |post| %>
-	<div class="post">
-		<img src="<%= post.content %>">
-		<p><%= @likes[post[:id]] %></p>
-	<% end %>
+	<div class="col-sm-8 col-sm-offset-2">
+		<div class="header">
+			<h1>Clowow</h1>
+			<button type="button" class="upload btn btn-primary">Upload</button>
+		</div>
+		<div class="feed">
+			<% @posts.each do |post| %>
+			<div class="post">
+				<img src="<%= post.content %>">
+				<div class="info row">
+					<div class="like-count col-sm-6"><%= @likes[post[:id]] %></div>
+					<div class="comment-count col-sm-6"><%= @comments[post[:id]] %></div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
 </div>

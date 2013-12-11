@@ -3,13 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: hsla(201, 71%, 91%, 1)
+  background-color: hsla(200, 70%, 90%, 1)
 }
 
 h1 {
-	text-align: center;
 	color: hsl(0,0%, 100%);
-	font-size: 4em;
+	font-size: 5em;
 	font-weight: bold;
-	text-shadow: 1px 1px 1px hsla(0,0%,0%,.2);
+	text-shadow: 0px 0px 1px hsla(0,0%,0%,.5);
+	margin-top: 0.5em
+}
+
+.header {
+	text-align: center;
+}
+
+.upload {
+	font-size: 2em;
+	padding: .3em 2em;
+	margin-top: .5em;
+}
+
+.post {
+	box-shadow: 0px 0px 1px hsla(0,0%,0%, .3)
+}
+
+.feed {
+	margin-top: 2em;
+}
+
+.info {
+	margin-top: 1em;
+	color: hsla(200, 5%, 70%, 1);
+}
+
+.comment-count {
+	text-align: right;
 }

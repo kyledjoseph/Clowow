@@ -7,17 +7,31 @@
 		</div>
 		<div class="feed">
 			<% @posts.each do |post| %>
-			<div class="post">
+			<div class="post" data-id="<%= post[:id] %>">
 				<img src="<%= post.content %>">
 				<div class="info row">
 					<div class="like-count col-sm-6">
-						<%= @likes[post[:id]] %>
+						<%= @like_count[post[:id]] %>
 					</div>
 					<div class="comment-count col-sm-6">
-						<a href="#"><%= @comments[post[:id]] %></a>
+						<a class="view-comments" href="#" data-post="<%= post[:id] %>"><%= @comment_count[post[:id]] %></a>
 					</div>
-					<div class="comments">
+				</div>
 
+				<div class="comments row">
+					<% @comments[post[:id]].each do |comment| %>
+					<div class="comment col-sm-12">
+						<hr>
+						<%= comment %>
+					</div>
+					<% end %>
+					<div class="col-sm-12">
+						<div class="submit-comment input-group">
+							<input type="text" class="form-control">
+							<span class="input-group-btn">
+								<button class="btn btn-primary" type="button">Comment</button>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

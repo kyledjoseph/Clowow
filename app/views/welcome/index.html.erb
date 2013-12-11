@@ -10,8 +10,12 @@
 			<div class="post">
 				<img src="<%= post.content %>">
 				<div class="info row">
-					<div class="like-count col-sm-6"><%= @likes[post[:id]] %></div>
-					<div class="comment-count col-sm-6"><%= @comments[post[:id]] %></div>
+					<div class="like-count col-sm-6">
+						<%= @likes[post[:id]] %>
+					</div>
+					<div class="comment-count col-sm-6">
+					<a href="#"><%= @comments[post[:id]] %></a>
+					</div>
 				</div>
 			</div>
 			<% end %>

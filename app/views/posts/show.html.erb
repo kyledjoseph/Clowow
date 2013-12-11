@@ -2,12 +2,12 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @post.content %>
+  <img width="100" src="<%= @post.content %>">
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @post.user_id %>
+  <a href="/users/<%= @post.user_id %>"><%= @post.user_id %></a>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

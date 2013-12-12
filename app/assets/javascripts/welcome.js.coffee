@@ -5,6 +5,4 @@
 $ ->
   $('.view-comments').click ->
     event.preventDefault()
-    id = $(this).data('post')
-    console.log(id)
-    $('.post[data-id=' + id + '] .comments').toggle()
+    $('.post[data-id=' + $(this).data('post') + '] .comments').toggle()

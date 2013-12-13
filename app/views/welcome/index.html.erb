@@ -16,7 +16,7 @@
 						<%= @like_count[post[:id]] %>
 					</div>
 					<div class="location hidden-xs col-sm-4">
-					<%= post.location %>
+						<%= post.location %>
 					</div>
 					<div class="comment-count col-xs-6 col-sm-4">
 						<a class="view-comments" href="#" data-post="<%= post[:id] %>"><%= @comment_count[post[:id]] %></a>
@@ -56,11 +56,15 @@
 				<form role="form">
 					<div class="form-group">
 						<label for="exampleInputEmail1">Email address</label>
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" required>
+						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="you@example.com" required>
 					</div>
 					<div class="form-group">
 						<label for="exampleInputFile">File input</label>
 						<input type="file" id="exampleInputFile">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputLocation1">Location</label>
+						<input type="email" class="form-control" id="exampleInputLocation1" placeholder="Chicago, IL" required>
 					</div>
 				</form>
 			</div>

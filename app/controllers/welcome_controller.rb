@@ -9,13 +9,13 @@ class WelcomeController < ApplicationController
 
 		@posts.each do |post|
 			like_count = Like.where(:post_id => post.id).count
-			like_count == 1 ? phrase = 'person likes' : phrase = 'people like'
+			like_count == 1 ? like_word = 'like' : like_word = 'likes'
 			
 			comment_count = Comment.where(:post_id => post.id).count
-			comment_count == 1 ? word = 'comment' : word = 'comments'
+			comment_count == 1 ? comment_word = 'comment' : comment_word = 'comments'
 
-			@like_count[post[:id]] = "#{like_count} #{phrase} this"
-			@comment_count[post[:id]] = "#{comment_count} #{word}"
+			@like_count[post[:id]] = "#{like_count} #{like_word}"
+			@comment_count[post[:id]] = "#{comment_count} #{comment_word}"
 			comment_array = []
 			Comment.where(:post_id =>post.id).each do |comment|
 				comment_array.push(comment.content)

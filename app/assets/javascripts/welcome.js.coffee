@@ -6,3 +6,5 @@ $ ->
   $('.view-comments').click ->
     event.preventDefault()
     $('.post[data-id=' + $(this).data('post') + '] .comments').toggle()
+  $('.like').click ->
+  	event.preventDefault()

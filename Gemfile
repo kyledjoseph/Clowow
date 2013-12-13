@@ -19,8 +19,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use Bootstrap
 gem 'rails-assets-bootstrap'
 
-# Glyphicons are cool too
-gem 'rails-assets-components-font-awesome'
+# Icons are (font) awesome
+gem "font-awesome-rails"
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

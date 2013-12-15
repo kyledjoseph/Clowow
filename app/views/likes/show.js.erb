@@ -1,0 +1,1 @@
+$('.post[data-id=<%= @post.id %>] .like-count').html("<%= escape_javascript render('likes/like', post: @post) %>")

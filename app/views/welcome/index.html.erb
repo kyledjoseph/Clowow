@@ -12,8 +12,7 @@
         <img src="<%= post.content %>">
         <div class="info row">
           <div class="like-count col-xs-6 col-sm-4">
-            <a class="like" href="#" data-post="<%= post.id %>"><i class="fa fa-heart"></i></a>
-            <%= pluralize post.likes.size, "like" %>
+            <%= render "likes/like", post: post %>
           </div>
           <div class="location hidden-xs col-sm-4">
             <%= post.location %>
@@ -31,12 +30,7 @@
           </div>
           <% end %>
           <div class="col-sm-12">
-            <div class="submit-comment comment input-group">
-              <input type="text" class="form-control">
-              <span class="input-group-btn">
-                <button class="btn btn-primary" type="button">Comment</button>
-              </span>
-            </div>
+            <%= render "new_comment_form", post: post %>
           </div>
         </div>
       </div>
@@ -48,6 +42,7 @@
 <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="uploadModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+      <%= form_for Post.new do %>
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="uploadModalLabel">Upload image</h4>
@@ -72,6 +67,7 @@
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-primary">Upload</button>
       </div>
+      <% end %>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

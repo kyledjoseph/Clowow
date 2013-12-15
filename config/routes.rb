@@ -1,16 +1,12 @@
 Clowow::Application.routes.draw do
-  resources :likes
 
-  resources :comments
-
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy]
+  end
 
   resources :users
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
   root 'welcome#index'
 
   # Example of regular route:

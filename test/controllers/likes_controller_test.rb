@@ -2,48 +2,26 @@ require 'test_helper'
 
 class LikesControllerTest < ActionController::TestCase
   setup do
+    @post = posts(:one)
     @like = likes(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:likes)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
+    @post.likes << @like
   end
 
   test "should create like" do
     assert_difference('Like.count') do
-      post :create, like: { post_id: @like.post_id, user_id: @like.user_id }
+      post :create, post_id: @post.id, format: :js
     end
 
-    assert_redirected_to like_path(assigns(:like))
-  end
-
-  test "should show like" do
-    get :show, id: @like
     assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @like
-    assert_response :success
-  end
-
-  test "should update like" do
-    patch :update, id: @like, like: { post_id: @like.post_id, user_id: @like.user_id }
-    assert_redirected_to like_path(assigns(:like))
   end
 
   test "should destroy like" do
+    session[:likes] = [@like.id]
+
     assert_difference('Like.count', -1) do
-      delete :destroy, id: @like
+      delete :destroy, post_id: @like.post_id, id: @like.id, format: :js
     end
 
-    assert_redirected_to likes_path
+    assert_response :success
   end
 end

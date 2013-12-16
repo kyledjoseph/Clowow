@@ -1,11 +1,9 @@
 Clowow::Application.routes.draw do
 
-  resources :posts do
-    resources :comments, only: [:create]
+  resources :posts, only: :create do
+    resources :comments, only: :create
     resources :likes, only: [:create, :destroy]
   end
-
-  resources :users
 
   root 'welcome#index'
 

@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
-	belongs_to :user
   has_many :likes
   has_many :comments
 
-	validates :content, length: { maximum: 512 }
+  validates_presence_of :email, :image, :location
+
+  has_attached_file :image, path: "images/:id/:style/:filename", url: ":s3_domain_url"
 end

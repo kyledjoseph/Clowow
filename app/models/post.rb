@@ -4,5 +4,10 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :email, :image, :location
 
-  has_attached_file :image, path: "images/:id/:style/:filename", url: ":s3_domain_url"
+  has_attached_file :image,
+    path: "images/:id/:style/:filename",
+    url: ":s3_domain_url",
+    styles: {
+      original: "700x*>"
+    }
 end

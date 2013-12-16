@@ -4,5 +4,7 @@
 
 $ ->
   $('.view-comments').click ->
+    
     event.preventDefault()
-    $('.post[data-id=' + $(this).data('post') + '] .comments').toggle()
+    $('.post[data-id=' + $(this).data('post') + '] .comments').toggle 0, ->
+      this.scrollTop = this.scrollHeight;

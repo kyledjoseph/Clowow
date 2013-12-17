@@ -36,7 +36,11 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'aws-sdk'
 gem 'paperclip'
-gem 'figaro'
+gem 'counter_culture', '~> 0.1.18'
+
+group :test, :development do
+  gem 'figaro'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

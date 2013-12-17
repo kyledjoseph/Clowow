@@ -1,6 +1,6 @@
-<% if like = Like.find_by(id: session[:likes], post_id: post.id) %>
+<% if like = post.likes.find_by(id: session[:likes]) %>
   <%= link_to post_like_path(post, like), class: "like", data: { post: post.id, method: :delete, remote: true } do %><i class="fa fa-heart"></i><% end %>
 <% else %>
   <%= link_to post_likes_path(post), class: "like", data: { post: post.id, method: :post, remote: true } do %><i class="fa fa-heart-o"></i><% end %>
 <% end %>
-<%= pluralize post.likes.size, "like" %>
+<%= pluralize post.likes.count, "like" %>

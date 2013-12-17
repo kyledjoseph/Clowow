@@ -5,7 +5,10 @@ Clowow::Application.routes.draw do
     resources :likes, only: [:create, :destroy]
   end
 
-  root 'welcome#index'
+  controller :welcome do
+    get :top
+    root to: :index
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

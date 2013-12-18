@@ -1,9 +1,15 @@
 <div class="container">
   <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
     <div class="header">
-      <h1><i class="icon-trash"></i>Clowow</h1>
+      <%= image_tag "logo.png", alt: "Clowow" %>
       <h2>Share your favorite cloud pics with the world!</h2>
-      <button type="button" class="upload btn btn-primary" data-toggle="modal" data-target="#uploadModal">Upload</button>
+      <div>
+        <button type="button" class="upload btn btn-primary" data-toggle="modal" data-target="#uploadModal">Upload</button>
+      </div>
+      <div class="btn-group btn-group-lg sort">
+        <button type="button" class="btn btn-default <%= @new %>" data-nav="/">New</button>
+        <button type="button" class="btn btn-default <%= @top %>" data-nav="/top">Top</button>
+      </div>
     </div>
 
     <div class="feed">

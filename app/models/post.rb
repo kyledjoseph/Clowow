@@ -8,8 +8,6 @@ class Post < ActiveRecord::Base
   scope :most_liked, -> { order likes_count: :desc }
 
   has_attached_file :image,
-    path: "images/:id/:style/:filename",
-    url: ":s3_domain_url",
     styles: {
       original: "700x*>"
     }
